@@ -3,9 +3,9 @@ const fs = require('fs');
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (!license) {
-    return '';
+    return ``;
   } else {
-    return '';
+    return `https://img.shields.io/badge/License-${license}-blue.svg)](${renderLicenseLink(license)})`;
   }
 }
 // TODO: Create a function that returns the license link
@@ -51,7 +51,7 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
+
   ${renderLicenseBadge(data.license)}
 
   ## Table of Contents
@@ -82,7 +82,7 @@ ${renderLicenseSection(data.license)}
   ${data.tests}
 
   ## Questions
-  If you have an questions about this project please contact me using my contacts below!
+  If you have an questions about this project please reach out using my contacts below!
   GitHub: https://github.com/${data.github}
   Email: ${data.email}
 
