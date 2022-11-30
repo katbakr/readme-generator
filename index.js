@@ -3,7 +3,7 @@
 const fs = require('fs'); 
 const inquirer = require('inquirer'); 
 
-const mkpage = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 //THEN a high-quality, professional README.md is generated with the title of my 
@@ -117,7 +117,7 @@ const questions = [
 // TODO: Create a function to write README file
 const writeToFile = data => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('README.md', data, err => {
+        fs.writeFile('./dist/README.md', data, err => {
             if (err) {
                 console.log(err);
                 return;
@@ -129,7 +129,18 @@ const writeToFile = data => {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {
+    return inquirer.prompt(questions);
+}
 
 // Function call to initialize app
-init();
+init()
+.then(userInput => {
+    return generateMarkdown(userInput);
+})
+.then(markdownInfo => {
+    return writeToFile(markdownInfo);
+})
+.catch(err => {
+    console.error;
+})
