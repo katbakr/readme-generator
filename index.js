@@ -6,8 +6,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-//THEN a high-quality, professional README.md is generated with the title of my 
-//project and sections entitled Description, 
+//THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, 
 //Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const questions = [
     {
@@ -114,7 +113,7 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// A function to write README file
 const writeToFile = data => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/README.md', data, err => {
@@ -128,7 +127,7 @@ const writeToFile = data => {
     })
 }
 
-// TODO: Create a function to initialize app
+// A function to initialize app
 const init = () => {
     return inquirer.prompt(questions);
 }

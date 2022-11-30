@@ -5,7 +5,8 @@ function renderLicenseBadge(license) {
   if (!license) {
     return ``;
   } else {
-    return `https://img.shields.io/badge/License-${license}-blue.svg)](${renderLicenseLink(license)})`;
+    return ``;
+    //not working
   }
 }
 // TODO: Create a function that returns the license link
@@ -84,6 +85,7 @@ ${renderLicenseSection(data.license)}
   ## Questions
   If you have an questions about this project please reach out using my contacts below!
   GitHub: https://github.com/${data.github}
+
   Email: ${data.email}
 
 `;
