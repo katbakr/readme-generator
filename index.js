@@ -1,11 +1,11 @@
-// TODO: Include packages needed for this application
+//packages needed for this application
 
 const fs = require('fs'); 
 const inquirer = require('inquirer'); 
 
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+//array of questions for user input
 //THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, 
 //Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const questions = [
