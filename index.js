@@ -89,18 +89,6 @@ const questions = [
         choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU General Public License v2.0', 'Mozilla Public License 2.0']
     },
     {
-        type: '',
-        name: '',
-        message: '',
-        validate: userInput => {
-            if (userInput) {
-                return true;
-            } else {
-                console.log('');
-            }
-        }
-    },
-    {
         type: 'input',
         name: 'github',
         message: 'Please enter your GitHub username:',
@@ -115,19 +103,30 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: '',
+        message: 'Please enter an email address that you can be reached at:',
         validate: userInput => {
             if (userInput) {
                 return true;
             } else {
-                console.log('');
+                console.log('Please enter an email so people with questions can reach out!');
             }
         }
     },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = data => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('README.md', data, err => {
+            if (err) {
+                console.log(err);
+                return;
+            } else {
+                console.log('Yay your README.md is ready!')
+            }
+        })
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
