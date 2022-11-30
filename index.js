@@ -42,51 +42,51 @@ const questions = [
             if (userInput) {
                 return true;
             } else {
-                console.log('We need to add instructions for installation. Please try again!');
+                console.log('We need to add instructions for installation of your project. Please try again!');
             }
         }
     },
     {
-        type: '',
+        type: 'input',
         name: 'usage',
-        message: '',
+        message: 'Please enter instructions for usage:',
         validate: userInput => {
             if (userInput) {
                 return true;
             } else {
-                console.log('');
+                console.log('Let people know how to use your project. Try again!');
             }
         }
     },
     {
-        type: '',
+        type: 'input',
         name: 'contribute',
-        message: '',
+        message: 'How can people contribute to your project?',
         validate: userInput => {
             if (userInput) {
                 return true;
             } else {
-                console.log('');
+                console.log('Please enter information for how others can contribute to your project!');
             }
         }
     },
     {
-        type: '',
+        type: 'input',
         name: 'tests',
-        message: '',
+        message: 'Enter information about tests that are written for your project:',
         validate: userInput => {
             if (userInput) {
                 return true;
             } else {
-                console.log('');
+                console.log('Please provide information about testing for your project. Try again!');
             }
         }
     },
     {
-        type: '',
-        name: 'liscense',
-        message: '',
-        default
+        type: 'list',
+        name: 'liscenses',
+        message: 'What Lisence would you like to include on your project?',
+        choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU General Public License v2.0', 'Mozilla Public License 2.0']
     },
     {
         type: '',
